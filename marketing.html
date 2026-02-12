@@ -132,6 +132,57 @@
             box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
         }
 
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Snackbar/Toast */
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #snackbar.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
         @media (max-width: 600px) {
             .logo {
                 font-size: 2em;
@@ -150,8 +201,10 @@
         <div class="logo">Format<span>Flex</span></div>
         <div class="tagline">The all-in-one professional document scanner and file converter for iOS.</div>
         <!-- Replace '#' with your actual App Store URL once the app is live -->
-        <a href="#features" class="cta-button">Download on App Store</a>
+        <a href="#features" class="cta-button" id="downloadBtn">Download on App Store</a>
     </header>
+
+    <div id="snackbar">App Store link coming soon! 🚀</div>
 
     <div class="container" id="features">
         <div class="features">
@@ -191,6 +244,28 @@
         </div>
     </div>
 
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // 1. Try to show snackbar
+            var snackbar = document.getElementById("snackbar");
+            if (snackbar) {
+                snackbar.className = "show";
+                setTimeout(function () {
+                    snackbar.className = snackbar.className.replace("show", "");
+                }, 3000);
+            } else {
+                alert("App Store link coming soon! 🚀");
+            }
+
+            // 2. Smooth scroll to features
+            var target = document.getElementById('features');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
 </body>
 
 </html>

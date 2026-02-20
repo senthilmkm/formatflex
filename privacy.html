@@ -1,53 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - FormatFlex</title>
+    <title>Privacy Policy | FormatFlex</title>
+    <meta name="description"
+        content="Privacy Policy for FormatFlex. Learn how we handle your data with a privacy-first approach.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        h2 { margin-top: 30px; color: #2c3e50; }
-        p { margin-bottom: 15px; }
-        .footer { margin-top: 50px; font-size: 0.9em; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
+        /* style.css content start */
+        :root {
+            --bg-dark: #050505;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.5);
+            --accent: #8b5cf6;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px);
+            max-width: 1100px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .nav-logo span {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1), transparent 40%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            font-weight: 900;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: 0 8px 30px var(--primary-glow);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px var(--primary-glow);
+        }
+
+        /* Feature Section */
+        .features {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            padding: 48px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px var(--primary-glow));
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card p {
+            color: var(--text-dim);
+        }
+
+        /* Showcase Section */
+        .showcase {
+            padding: 120px 0;
+            background: #0a0a0a;
+        }
+
+        .showcase-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 40px;
+            padding: 40px 0;
+            scrollbar-width: none;
+        }
+
+        .showcase-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .showcase-item {
+            min-width: 300px;
+            height: 600px;
+            border-radius: 40px;
+            background: #1a1a1a;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(45deg, #111, #222);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-dim);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 24px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: 0 auto 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* style.css content end */
+
+        .legal-content {
+            padding: 160px 0 100px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .legal-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-updated {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+            padding: 40px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .policy-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .policy-section p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .policy-section li {
+            color: var(--text-dim);
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .policy-section li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid var(--primary-glow);
+        }
     </style>
 </head>
+
 <body>
-    <h1>Privacy Policy for FormatFlex</h1>
-    <p>Last updated: February 08, 2026</p>
+    <nav class="glass">
+        <a href="index.html" class="nav-logo">Format<span>Flex</span></a>
+        <div class="nav-links">
+            <a href="https://apps.apple.com/us/app/formatflex-file-converter/id6758912836" class="btn"
+                style="padding: 8px 24px; font-size: 0.9rem;">Download</a>
+        </div>
+    </nav>
 
-    <p>FormatFlex ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how your information is collected, used, and disclosed by FormatFlex.</p>
+    <main class="container">
+        <div class="legal-content">
+            <div class="legal-header reveal">
+                <span class="last-updated">Last updated: February 08, 2026</span>
+                <h1>Privacy Policy</h1>
+                <p style="color: var(--text-dim); font-size: 1.2rem;">Your privacy is our priority. This policy explains
+                    how we protect your information.</p>
+            </div>
 
-    <h2>1. Information We Collect</h2>
-    
-    <h3>Files for Conversion</h3>
-    <p>When you use our service to convert documents, you upload files to our secure servers. These files are processed solely for the purpose of conversion and are legally deleted from our servers shortly after the process is complete. we do not view, share, or store your content permanently.</p>
+            <div class="policy-section glass reveal">
+                <p>FormatFlex ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy
+                    explains how your information is collected, used, and disclosed by FormatFlex.</p>
+            </div>
 
-    <h3>Usage Data</h3>
-    <p>We may collect anonymous usage data to help us improve the app, such as crash reports and performance metrics.</p>
+            <div class="policy-section glass reveal">
+                <h2>1. Information We Collect</h2>
 
-    <h2>2. Third-Party Services</h2>
-    <p>We use trusted third-party services to operate our app:</p>
-    <ul>
-        <li><strong>RevenueCat:</strong> Used to manage in-app purchases and subscriptions. They may collect transaction data as per their privacy policy.</li>
-        <li><strong>Expo:</strong> Our app is built using Expo, which may collect data to ensure app stability.</li>
-    </ul>
+                <h3>Files for Conversion</h3>
+                <p>When you use our service to convert documents, you upload files to our secure servers. These files
+                    are processed solely for the purpose of conversion and are legally deleted from our servers shortly
+                    after the process is complete. We do not view, share, or store your content permanently.</p>
 
-    <h2>3. Data Security</h2>
-    <p>We implement industry-standard security measures to protect your files during transit (encryption) and processing. However, no method of transmission over the internet is 100% secure.</p>
+                <h3>Usage Data</h3>
+                <p>We may collect anonymous usage data to help us improve the app, such as crash reports and performance
+                    metrics.</p>
+            </div>
 
-    <h2>4. Your Rights</h2>
-    <p>You have the right to access or delete your personal data. Since we do not require user accounts and do not store files permanently, we hold minimal data about you.</p>
+            <div class="policy-section glass reveal">
+                <h2>2. Third-Party Services</h2>
+                <p>We use trusted third-party services to operate our app:</p>
+                <ul>
+                    <li><strong>RevenueCat:</strong> Used to manage in-app purchases and subscriptions. They may collect
+                        transaction data as per their privacy policy.</li>
+                    <li><strong>Expo:</strong> Our app is built using Expo, which may collect data to ensure app
+                        stability.</li>
+                </ul>
+            </div>
 
-    <h2>5. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. You are advised to review this page periodically for any changes.</p>
+            <div class="policy-section glass reveal">
+                <h2>3. Data Security</h2>
+                <p>We implement industry-standard security measures to protect your files during transit (encryption)
+                    and processing. However, no method of transmission over the internet is 100% secure.</p>
+            </div>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-    <p>Email: <strong>senthil930@gmail.com</strong></p>
+            <div class="policy-section glass reveal">
+                <h2>4. Your Rights</h2>
+                <p>You have the right to access or delete your personal data. Since we do not require user accounts and
+                    do not store files permanently, we hold minimal data about you.</p>
+            </div>
 
-    <div class="footer">
-        &copy; 2026 FormatFlex. All rights reserved.
-    </div>
+            <div class="policy-section glass reveal">
+                <h2>5. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. You are advised to review this page periodically
+                    for any changes.</p>
+            </div>
+
+            <div class="policy-section glass contact-box reveal">
+                <h2>Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <p><a href="mailto:senthil930@gmail.com" class="btn"
+                        style="background: transparent; border: 1px solid var(--primary); box-shadow: none;">senthil930@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo">Format<span>Flex</span></a>
+                <p style="margin-top: 16px;">The ultimate document toolkit for iOS. Scan, convert, and manage your
+                    professional files with ease.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="support.html#faq">FAQ</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            style="text-align: center; color: var(--text-dim); padding-top: 40px; border-top: 1px solid var(--glass-border);">
+            <p>&copy; 2026 FormatFlex. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* script.js content start */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Reveal animations on scroll
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const revealObserver = new IntersectionObserver(revealCallback, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            reveals.forEach(reveal => {
+                revealObserver.observe(reveal);
+            });
+
+            // Smooth scroll for anchors
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // App Store Button Interaction
+            const downloadBtn = document.getElementById('mainDownloadBtn');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', (e) => {
+                    const href = downloadBtn.getAttribute('href');
+                    if (!href || href === '#' || href === '') {
+                        e.preventDefault();
+                        showNotification('App Store link coming soon! 🚀');
+                    }
+                });
+            }
+
+            // Custom notification
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'glass';
+                Object.assign(notification.style, {
+                    position: 'fixed',
+                    bottom: '40px',
+                    left: '50%',
+                    transform: 'translateX(-50%) translateY(100px)',
+                    padding: '16px 32px',
+                    zIndex: '2000',
+                    transition: 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                    boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+                    fontWeight: '600'
+                });
+
+                notification.textContent = message;
+                document.body.appendChild(notification);
+
+                // Animate in
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(-50%) translateY(0)';
+                }, 10);
+
+                // Animate out
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(-50%) translateY(150px)';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 500);
+                }, 3000);
+            }
+
+            // Micro-interactions for feature cards
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        });
+        /* script.js content end */
+    </script>
 </body>
+
 </html>

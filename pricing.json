@@ -12,7 +12,8 @@
     "starter": {
         "price": 1.99,
         "display": "$1.99",
-        "saleText": ""
+        "saleText": "",
+        "starterConversions": 15
     },
     "freeLimit": 5
 }

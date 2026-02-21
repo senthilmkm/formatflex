@@ -81,39 +81,16 @@
             color: var(--primary);
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%),
-                radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1), transparent 40%);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 4.5rem);
-            line-height: 1.1;
-            font-weight: 900;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: var(--text-dim);
-            margin-bottom: 40px;
-            max-width: 500px;
+        /* Hero/Background effects */
+        .page-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.08), transparent 40%);
         }
 
         .btn {
@@ -136,97 +113,90 @@
             box-shadow: 0 12px 40px var(--primary-glow);
         }
 
-        /* Feature Section */
-        .features {
-            padding: 120px 0;
+        /* Legal Content */
+        .legal-content {
+            padding: 160px 0 100px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .section-title {
+        .legal-header {
+            margin-bottom: 60px;
             text-align: center;
-            margin-bottom: 80px;
         }
 
-        .section-title h2 {
-            font-size: 3rem;
+        .legal-header h1 {
+            font-size: 3.5rem;
             margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
+        .last-updated {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 12px;
         }
 
-        .feature-card {
-            padding: 48px;
-            transition: var(--transition);
+        .policy-section {
+            margin-bottom: 40px;
+            padding: 40px;
         }
 
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-8px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
+        .policy-section h2 {
+            font-size: 2rem;
             margin-bottom: 24px;
-            display: inline-block;
-            filter: drop-shadow(0 0 10px var(--primary-glow));
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-
-        .feature-card p {
-            color: var(--text-dim);
-        }
-
-        /* Showcase Section */
-        .showcase {
-            padding: 120px 0;
-            background: #0a0a0a;
-        }
-
-        .showcase-slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 40px;
-            padding: 40px 0;
-            scrollbar-width: none;
-        }
-
-        .showcase-slider::-webkit-scrollbar {
-            display: none;
-        }
-
-        .showcase-item {
-            min-width: 300px;
-            height: 600px;
-            border-radius: 40px;
-            background: #1a1a1a;
-            position: relative;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .showcase-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .placeholder-img {
-            width: 100%;
-            height: 100%;
+            color: var(--primary);
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 12px;
+        }
+
+        .policy-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .policy-section p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .policy-section li {
+            color: var(--text-dim);
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .policy-section li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid var(--primary-glow);
             text-align: center;
-            padding: 40px;
-            background: linear-gradient(45deg, #111, #222);
+            padding: 60px 40px;
         }
 
         /* Footer */
@@ -291,99 +261,25 @@
                 text-align: center;
             }
 
-            .hero-content p {
-                margin: 0 auto 40px;
-            }
-
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-        }
 
-        /* style.css content end */
+            .legal-header h1 {
+                font-size: 2.5rem;
+            }
 
-        .legal-content {
-            padding: 160px 0 100px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .legal-header {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .legal-header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .last-updated {
-            color: var(--primary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-
-        .policy-section {
-            margin-bottom: 40px;
-            padding: 40px;
-        }
-
-        .policy-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 24px;
-            color: var(--primary);
-        }
-
-        .policy-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
-            color: var(--text-main);
-        }
-
-        .policy-section p {
-            color: var(--text-dim);
-            margin-bottom: 20px;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .policy-section ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .policy-section li {
-            color: var(--text-dim);
-            margin-bottom: 12px;
-            padding-left: 24px;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .policy-section li::before {
-            content: "•";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .contact-box {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border: 1px solid var(--primary-glow);
+            .policy-section {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="page-bg"></div>
+
     <nav class="glass">
         <a href="index.html" class="nav-logo">Format<span>Flex</span></a>
         <div class="nav-links">
@@ -395,65 +291,68 @@
     <main class="container">
         <div class="legal-content">
             <div class="legal-header reveal">
-                <span class="last-updated">Last updated: February 11, 2026</span>
-                <h1>Terms of Service (EULA)</h1>
+                <span class="last-updated">Last updated: February 21, 2026</span>
+                <h1>Terms of Service</h1>
                 <p style="color: var(--text-dim); font-size: 1.2rem;">Please read these terms carefully before using
-                    FormatFlex.</p>
+                    FormatFlex. Your use of this application constitutes acceptance of these terms.</p>
             </div>
 
             <div class="policy-section glass reveal">
-                <p>By downloading or using the FormatFlex app, these terms will automatically apply to you – you should
+                <p>Welcome to FormatFlex. By downloading or using the FormatFlex app, these terms will automatically
+                    apply to you – you should
                     make sure therefore that you read them carefully before using the app.</p>
             </div>
 
             <div class="policy-section glass reveal">
-                <h2>1. Use of Service</h2>
-                <p>FormatFlex provides document conversion services. You are responsible for the content you upload and
-                    convert. You must not use the service for any illegal purposes or to violate any laws in your
-                    jurisdiction.</p>
+                <h2><span>📜</span> 1. Use of Service</h2>
+                <p>FormatFlex provides advanced document conversion and smart scanning services. By using our
+                    application, you agree to:</p>
+                <ul>
+                    <li>Use the service only for lawful purposes.</li>
+                    <li>Assume full responsibility for the content you convert or scan.</li>
+                    <li>Not attempt to decompile, reverse engineer, or extract source code from the app.</li>
+                    <li>Comply with all local, state, national, and international laws.</li>
+                </ul>
             </div>
 
             <div class="policy-section glass reveal">
-                <h2>2. Subscriptions and Payments</h2>
-                <p>We offer auto-renewable subscriptions to unlock additional features (Pro Plan). Payments will be
-                    charged to your Apple ID account at the confirmation of purchase. The subscription automatically
-                    renews unless it is canceled at least 24 hours before the end of the current period.</p>
-                <p>Your account will be charged for renewal within 24 hours prior to the end of the current period. You
-                    can manage and cancel your subscriptions by going to your account settings on the App Store after
-                    purchase.</p>
+                <h2><span>💳</span> 2. Subscriptions & Payments</h2>
+                <p>We offer auto-renewable subscriptions to unlock premium features through the Pro Plan. Payments will
+                    be
+                    charged to your Apple ID account at the confirmation of purchase.</p>
+                <p><strong>Auto-Renewal:</strong> The subscription automatically renews unless it is canceled at least
+                    24 hours before the end of the current period. Your account will be charged for renewal within 24
+                    hours prior to the end of the current period.</p>
+                <p><strong>Management:</strong> You can manage and cancel your subscriptions in your App Store account
+                    settings. Refunds are handled directly by Apple according to their standard policies.</p>
             </div>
 
             <div class="policy-section glass reveal">
-                <h2>3. Privacy</h2>
-                <p>Your use of FormatFlex is also governed by our <a href="privacy.html"
-                        style="color: var(--primary); text-decoration: none;">Privacy Policy</a>, which is incorporated
-                    into these terms by reference.</p>
+                <h2><span>🔒</span> 3. Privacy & Data</h2>
+                <p>Your privacy is our priority. Your use of FormatFlex is also governed by our <a href="privacy.html"
+                        style="color: var(--primary); text-decoration: none; font-weight: 600;">Privacy Policy</a>. We
+                    do not store your documents permanently; they are processed securely and deleted immediately after
+                    conversion.</p>
             </div>
 
             <div class="policy-section glass reveal">
-                <h2>4. Intellectual Property</h2>
-                <p>The app itself, and all the trademarks, copyright, database rights, and other intellectual property
-                    rights related to it, still belong to FormatFlex.</p>
+                <h2><span>⚖️</span> 4. Intellectual Property</h2>
+                <p>All trademarks, copyright, database rights, and other intellectual property rights related to
+                    FormatFlex belong exclusively to the developer. You are granted a limited, non-transferable license
+                    to use the app for personal or professional document processing.</p>
             </div>
 
             <div class="policy-section glass reveal">
-                <h2>5. Termination</h2>
-                <p>We reserve the right to terminate your access to the app without notice if you violate these terms.
-                </p>
+                <h2><span>🚫</span> 5. Limitation of Liability</h2>
+                <p>FormatFlex is provided "as is" and "as available" without any warranties of any kind. We shall not be
+                    liable for any indirect, incidental, or consequential damages resulting from the use or inability to
+                    use the service, including data loss or conversion inaccuracies.</p>
             </div>
 
-            <div class="policy-section glass reveal">
-                <h2>6. Limitation of Liability</h2>
-                <p>FormatFlex is provided "as is" without any warranties. We shall not be liable for any damages or loss
-                    of data resulting from the use or inability to use the service.</p>
-            </div>
-
-            <div class="policy-section glass contact-box reveal">
-                <h2>Contact Us</h2>
-                <p>If you have any questions about these Terms, please contact us at:</p>
-                <p><a href="mailto:senthil930@gmail.com" class="btn"
-                        style="background: transparent; border: 1px solid var(--primary); box-shadow: none;">senthil930@gmail.com</a>
-                </p>
+            <div class="policy-section glass contact-card reveal">
+                <h2><span>📧</span> Contact Us</h2>
+                <p>Questions about these Terms? Our support team is here to help clarify any details.</p>
+                <a href="mailto:senthil930@gmail.com" class="btn">Email Support Team</a>
             </div>
         </div>
     </main>

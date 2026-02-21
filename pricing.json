@@ -1,0 +1,17 @@
+{
+    "monthly": {
+        "price": 8.99,
+        "display": "$8.99",
+        "saleText": ""
+    },
+    "annual": {
+        "price": 49.99,
+        "display": "$49.99",
+        "saleText": "🔥 BEST VALUE: NOW 16% OFF"
+    },
+    "starter": {
+        "price": 1.99,
+        "display": "$1.99",
+        "saleText": ""
+    }
+}

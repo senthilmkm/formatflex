@@ -13,5 +13,6 @@
         "price": 1.99,
         "display": "$1.99",
         "saleText": ""
-    }
+    },
+    "freeLimit": 5
 }

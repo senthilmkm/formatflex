@@ -15,5 +15,7 @@
         "saleText": "",
         "starterConversions": 15
     },
-    "freeLimit": 5
+    "freeLimit": 5,
+    "maxBatchSizeFree": 3,
+    "maxBatchSizePro": 4
 }

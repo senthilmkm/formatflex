@@ -13,9 +13,11 @@
         "price": 1.99,
         "display": "$1.99",
         "saleText": "",
-        "starterConversions": 15
+        "starterConversions": 10
     },
-    "freeLimit": 5,
+    "freeLimit": 3,
     "maxBatchSizeFree": 3,
-    "maxBatchSizePro": 4
+    "maxBatchSizeStarter": 3,
+    "maxBatchSizePro": 10,
+    "maxFileSizeMB": 10
 }

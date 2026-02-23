@@ -19,7 +19,7 @@
     "maxBatchSizeFree": 3,
     "maxBatchSizeStarter": 5,
     "maxBatchSizePro": 10,
-    "maxFileSizeMB": 10,
+    "maxFileSizeMB": 25,
     "maxScanPagesFree": 3,
     "maxScanPagesStarter": 10,
     "maxScanPagesPro": 25

@@ -380,16 +380,89 @@
             line-height: 1.8;
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--primary);
-            box-shadow: none;
-        }
-
         .btn-outline:hover {
             background: var(--primary);
             color: white;
             box-shadow: 0 8px 30px var(--primary-glow);
+        }
+
+        /* Matrix Table Styles */
+        .matrix-container {
+            margin-top: 24px;
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .matrix-table th,
+        .matrix-table td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .matrix-table th {
+            color: var(--text-dim);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .ext-badge {
+            font-family: monospace;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .target-pill {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 1px 8px;
+            border-radius: 4px;
+            margin: 2px;
+            font-size: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .category-chip {
+            font-size: 0.65rem;
+            font-weight: 900;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .cat-doc {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        .cat-img {
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+        }
+
+        .cat-sheet {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+        }
+
+        .cat-code {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
         }
     </style>
 </head>
@@ -424,6 +497,26 @@
                 <h2><span>❓</span> Frequently Asked Questions</h2>
 
                 <div class="faq-item">
+                    <h3>What is PDF Studio?</h3>
+                    <p><strong>PDF Studio</strong> is a powerful suite of professional document tools integrated
+                        directly into FormatFlex. It is divided into three specialized areas:
+                        <br><br>
+                        • <strong>Organizer</strong>: Effortlessly merge multiple PDFs, split documents, extract page
+                        ranges, or remove specific pages.
+                        <br>
+                        • <strong>Optimize</strong>: Reduce file size with advanced compression, add watermarks, and use
+                        AI-powered OCR to make your scans fully searchable.
+                        <br>
+                        • <strong>Sign & Secure</strong>: Apply visual signatures, use markup tools for annotations, and
+                        protect sensitive documents with industry-standard password encryption.
+                        <br><br>
+                        For maximum privacy, most PDF Studio operations (like splitting, merging, and signing) happen
+                        <strong>entirely on your device</strong>, while advanced features like OCR and high-ratio
+                        compression are processed on our secure cloud servers.
+                    </p>
+                </div>
+
+                <div class="faq-item">
                     <h3>How do I restore my Pro subscription?</h3>
                     <p>If you have previously purchased "FormatFlex Pro" but don't see your premium status, go to the
                         app settings or the paywall screen and tap the "Restore Purchases" button. Ensure you are signed
@@ -440,20 +533,97 @@
 
                 <div class="faq-item">
                     <h3>What file formats are supported?</h3>
-                    <p>FormatFlex supports an industry-leading range of formats:
-                        <br>• **Documents**: PDF, Word (DOC, DOCX), Rich Text (RTF), Plain Text (TXT)
-                        <br>• **Spreadsheets**: Excel (XLS, XLSX), OpenDocument (ODS), CSV
-                        <br>• **Presentations**: PowerPoint (PPT, PPTX)
-                        <br>• **Images**: JPG, PNG, HEIC
-                        <br>• **Web & eBook**: HTML, ODT
-                    </p>
+                    <p>FormatFlex features an extensive **Capability Matrix** with over **212 unique conversion
+                        combinations**. Below is our full supported transformation map:</p>
+
+                    <div class="matrix-container">
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Source</th>
+                                    <th>Possible Targets</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="category-chip cat-doc">Document</span></td>
+                                    <td><span class="ext-badge">.PDF</span></td>
+                                    <td>
+                                        <span class="target-pill">DOCX</span> <span class="target-pill">DOC</span> <span
+                                            class="target-pill">TXT</span>
+                                        <span class="target-pill">RTF</span> <span class="target-pill">ODT</span> <span
+                                            class="target-pill">HTML</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="category-chip cat-doc">Document</span></td>
+                                    <td><span class="ext-badge">.DOCX/.DOC</span></td>
+                                    <td>
+                                        <span class="target-pill">PDF</span> <span class="target-pill">TXT</span> <span
+                                            class="target-pill">RTF</span>
+                                        <span class="target-pill">ODT</span> <span class="target-pill">HTML</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="category-chip cat-img">Image</span></td>
+                                    <td><span class="ext-badge">.HEIC/.HEIF</span></td>
+                                    <td>
+                                        <span class="target-pill">PDF</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="category-chip cat-img">Image</span></td>
+                                    <td><span class="ext-badge">.JPG/.PNG</span></td>
+                                    <td>
+                                        <span class="target-pill">PDF</span> <span class="target-pill">WEBP</span> <span
+                                            class="target-pill">JPG/PNG</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="category-chip cat-img">Image</span></td>
+                                    <td><span class="ext-badge">.WEBP/.TIFF/.BMP</span></td>
+                                    <td>
+                                        <span class="target-pill">PDF</span> <span class="target-pill">JPG</span> <span
+                                            class="target-pill">PNG</span> <span class="target-pill">WEBP</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="category-chip cat-sheet">Sheet</span></td>
+                                    <td><span class="ext-badge">.XLSX/.XLS</span></td>
+                                    <td>
+                                        <span class="target-pill">PDF</span> <span class="target-pill">CSV</span> <span
+                                            class="target-pill">ODS</span> <span class="target-pill">HTML</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="category-chip cat-sheet">Sheet</span></td>
+                                    <td><span class="ext-badge">.CSV</span></td>
+                                    <td>
+                                        <span class="target-pill">PDF</span> <span class="target-pill">XLSX</span> <span
+                                            class="target-pill">XLS</span> <span class="target-pill">HTML</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="category-chip cat-code">Code</span></td>
+                                    <td><span class="ext-badge">.JS/.PY/.C++</span></td>
+                                    <td>
+                                        <span class="target-pill">PDF</span> <span class="target-pill">DOCX</span> <span
+                                            class="target-pill">HTML</span> <span class="target-pill">TXT</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="faq-item">
                     <h3>How does the Smart Scanner work?</h3>
                     <p>The Pro Document Scanner uses advanced edge detection to find document borders instantly. You can
-                        scan multiple pages sequentially, reorder them, and convert the entire set into a single,
-                        searchable PDF with high-accuracy OCR (Optical Character Recognition).</p>
+                        scan multiple pages sequentially and convert the entire set into a single high-fidelity PDF.
+                        Pro users can scan up to **25 pages** per document, while Starter and Free plans support **10**
+                        and **3 pages** respectively. Our backend uses high-accuracy OCR to ensure searchable, sharp
+                        results.</p>
                 </div>
 
                 <div class="faq-item">
@@ -481,10 +651,9 @@
 
                 <div class="faq-item">
                     <h3>Is there a file size limit for conversions?</h3>
-                    <p>To ensure maximum stability and speed on mobile connections, we currently support a file size
-                        limit of **20MB** per conversion. Our intelligent scanner automatically optimizes your captures
-                        to keep file sizes low while maintaining professional clarity, ensuring you rarely hit this
-                        limit even for long documents.</p>
+                    <p>To support high-resolution assets, we have increased our file size limit to **25MB** per file for
+                        all users. This is specially optimized for 48MP iPhone Pro photography and complex, multi-page
+                        document scans, ensuring you never hit a wall during your professional workflows.</p>
                 </div>
 
                 <div class="faq-item">
@@ -496,17 +665,20 @@
 
                 <div class="faq-item">
                     <h3>Can I convert multiple files at once?</h3>
-                    <p>FormatFlex features powerful multi-page scanning! You can capture as many pages as you need with
-                        the camera and convert them all into a single, high-fidelity PDF in one go. For existing files
-                        on your device, we currently support one conversion at a time to ensure the highest quality
-                        results for each document.</p>
+                    <p>Yes! FormatFlex now features powerful **Batch Conversion** support. You can select multiple
+                        documents
+                        from your files or capture multiple pages using the scanner. Pro users can process up to **10
+                        files**
+                        simultaneously, while Free and Starter plans support batches of up to **3 files**. You can even
+                        export your entire completed batch as a single, organized **ZIP archive**.</p>
                 </div>
 
                 <div class="faq-item">
                     <h3>How do I share my converted documents?</h3>
-                    <p>Sharing is seamless. Once a conversion is complete, tap the "Share" icon to open the native iOS
-                        Share Sheet. From there, you can send your document via AirDrop, Email, iMessage, or save it to
-                        the Files app and cloud services like iCloud, Google Drive, or Dropbox.</p>
+                    <p>Sharing is seamless. Once a conversion is complete, tap the **"Save / Open in App"** button (for
+                        single files) or **"ZIP & Share All"** (for batches). This opens the native iOS Share Sheet,
+                        where you can send your document via AirDrop, Email, iMessage, or save it to the Files app
+                        and cloud services like iCloud, Google Drive, or Dropbox.</p>
                 </div>
 
                 <div class="faq-item">
@@ -515,6 +687,15 @@
                         preview. If any page isn't perfect, you can easily remove it and capture a new one to ensure
                         your final document is exactly as you need it.</p>
                 </div>
+
+                <div class="faq-item">
+                    <h3>What is the "Starter Plan"?</h3>
+                    <p>The Starter Plan is a one-time purchase designed for users who need a specific number of premium
+                        conversions without committing to a subscription. It provides **10 high-fidelity conversions**
+                        with the same professional output quality as our Pro tier, making it perfect for occasional
+                        projects.</p>
+                </div>
+
 
                 <div class="faq-item">
                     <h3>How do I request a refund?</h3>

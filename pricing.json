@@ -7,7 +7,7 @@
     "annual": {
         "price": 49.99,
         "display": "$49.99",
-        "saleText": "🔥 BEST VALUE: NOW 16% OFF"
+        "saleText": "Save 54% • Just $4.17/month"
     },
     "starter": {
         "price": 1.99,
@@ -15,12 +15,12 @@
         "saleText": "",
         "starterConversions": 10
     },
-    "freeLimit": 3,
-    "maxBatchSizeFree": 3,
+    "freeLimit": 5,
+    "maxBatchSizeFree": 2,
     "maxBatchSizeStarter": 5,
     "maxBatchSizePro": 10,
     "maxFileSizeMB": 25,
-    "maxScanPagesFree": 3,
+    "maxScanPagesFree": 5,
     "maxScanPagesStarter": 10,
     "maxScanPagesPro": 25
 }
